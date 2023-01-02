@@ -1,0 +1,19 @@
+.thumbnail-container{
+    border: 1px solid #000;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background: #c4002b;
+    height:240px;
+}
+.thumbnail{
+   padding:15px;
+   color:#fff;
+}
+
+h6{
+    padding:10px 15px;
+    background:#9f0426;
+    color:#fff;
+}
+

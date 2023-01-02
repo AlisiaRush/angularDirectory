@@ -1,0 +1,23 @@
+<p><strong>NgStyle</strong></p>
+
+<div
+  *ngFor="let game of games"
+  class="details-container"
+  [ngStyle]="{
+    background: game.available === 'available' ? 'green' : 'black'
+  }"
+>
+  <div class="details">
+    <h4>{{ game.name }}</h4>
+  </div>
+  <div class="details">
+    {{ game.console }}
+  </div>
+  <div class="details">{{ game.releaseDate }}</div>
+  <div
+    class="details"
+    [ngStyle]="{ color: game.available === 'available' ? 'blue' : 'orange' }"
+  >
+    {{ game.available }}
+  </div>
+</div>

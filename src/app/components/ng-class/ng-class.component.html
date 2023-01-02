@@ -1,0 +1,34 @@
+<h5>Ng Class</h5>
+<p>
+  <strong>
+    Uses a class name referenced in the template css file and is based on a
+    condition in the HTML element in which that style is being applied.
+  </strong>
+</p>
+<br />
+
+<div class="notification">
+  <p [(ngModel)]="value" [ngClass]="{ changeBg: value === true }">
+    Change the color of this text using ngClass if the value is true!
+  </p>
+
+  <p [(ngModel)]="value" [ngClass]="{ changeBg2: value === false }">
+    Don't change the color of this text using ngClass if the value is false!
+  </p>
+</div>
+
+<button class="btn btn-warning" (click)="getCode()">Show Code</button>
+
+<div *ngIf="showCode" class="code-container col-lg-7">
+  <button class="close-button btn" (click)="closeCode()">x</button>
+  <div class="code-content">
+    <h5 class="subtitle">HTML FILE:</h5>
+    &lt;p [(ngModel)]="value" [ngClass]="&#123; changeBg: value === true
+    &#125;"> Change the color of this text using ngClass if the value is true!
+    &lt;/p>
+    <br />
+    <br />
+    <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+    public value: boolean = true;
+  </div>
+</div>

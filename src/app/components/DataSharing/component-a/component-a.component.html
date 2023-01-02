@@ -1,0 +1,73 @@
+<div class="">
+  <input type="text" [(ngModel)]="enteredSubjectText" />
+  <br />
+  <button (click)="onButtonClickSubject()" class="btn btn-primary mt-4 mb-4">
+    Get Component Value using Subject
+  </button>
+  &nbsp; &nbsp;
+  <button class="btn btn-warning" (click)="getCode()">Show Code</button>
+
+  <div *ngIf="showCode" class="col-lg-12 code-container">
+    <h4 class="title">
+      Component A
+      <button class="close-button btn" (click)="closeCode()">x</button>
+    </h4>
+    <div class="code-content">
+      <h5 class="subtitle">HTML FILE:</h5>
+
+      &lt;input type="text" [(ngModel)]="enteredSubjectText" />
+      <br />
+      &lt;button (click)="onButtonClickSubject()" class="btn btn-primary mt-4
+      mb-4"> Get Component Value using Subject &lt;/button>
+      <br />
+      <br />
+
+      <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+      <p>
+        constructor(private subjectDataService: SubjectDataService) &#123;
+        &#125;
+        <br />
+        public enteredSubjectText!: string;
+        <br />
+        public onButtonClickSubject() &#123;
+        this.subjectDataService.raisedSubjectEmitterEvent(
+        <br />
+        this.enteredSubjectText); console.log(this.enteredSubjectText); &#125;
+      </p>
+    </div>
+    <div>
+      <h4 class="title">
+        Component B
+        <button class="close-button btn" (click)="closeCode()">x</button>
+      </h4>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+
+        &lt;p>You entered from component B: &#123; &#123; inputSubjectText
+        &#125; &#125;&lt;/p>
+        <br />
+        <br />
+
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        <p>
+          constructor(private subjectDataService: SubjectDataService) &#123;
+          &#125;
+          <br />public inputSubjectText!: string;
+          <br />
+          ngOnInit() &#123;
+          this.subjectDataService.dataSubjectEmitter.subscribe((subjectValue) =>
+          &#123; this.inputSubjectText = subjectValue; &#125;); &#125;
+        </p>
+        <h5 class="subtitle">SERVICE FILE:</h5>
+        <p>
+          import &#123; Subject &#125; from 'rxjs';
+          <br />
+          public dataSubjectEmitter = new Subject &lt;string>();
+          <br />
+          public raisedSubjectEmitterEvent(data: string) &#123;
+          this.dataSubjectEmitter.next(data); &#125;
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<p><strong>Ng For Loop</strong></p>
+
+<div class="item-container col-lg-3" *ngFor="let item of items">
+  <h4>{{ item.name }}</h4>
+  <ul [ngClass]="{ changeBg: item.category === 'cookware' }">
+    <li>{{ item.cost }}</li>
+    <li>{{ item.category }}</li>
+  </ul>
+</div>

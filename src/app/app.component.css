@@ -1,0 +1,13 @@
+.header-wrapper{
+    background:lightblue;
+}
+.header-container img{
+    padding: 10px 15px;
+    width:100%;
+}
+
+.search-wrapper{
+    color:#fff;
+    background:#38458c;
+    padding:5px 15px;
+}

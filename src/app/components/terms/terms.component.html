@@ -1,0 +1,242 @@
+<div class="col-lg-12">
+  <p><strong>Terms</strong></p>
+
+  <ul>
+    <li>
+      <h6>What is Angular?</h6>
+      <p>
+        A Component Based Framework built using JavaSscript, that allows for the
+        development of scalable applications.
+      </p>
+    </li>
+
+    <li>
+      <h6>What are the technologies used in Angular?</h6>
+      <ol>
+        <li>NPM (Node Package Manager)</li>
+        <li>Angular CLI (Command Line Interface)</li>
+        <li>TypeScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>
+          RXJS (Reactive Extensions for JavaScript). In Angular used as a
+          library to Subscribe to a service using Observables
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>How does an Angular application work?</h6>
+      <ol>
+        <li>Download and install <strong>NodeJs</strong></li>
+        <li>Use the terminal command <strong>npm i -g</strong></li>
+
+        <li>Use the terminal command <strong>npm i @angular/cli</strong></li>
+        <li>Navigate to designated folder for project</li>
+        <li>
+          Run the command ng new <strong>&lt;name of application></strong>
+        </li>
+        <li>run command npm i to install <strong>node_modules</strong></li>
+        <li>
+          <strong>npm start</strong> or <strong>ng serve</strong> to start the
+          application
+        </li>
+        <li>
+          When an Angular app runs, the first file read is the
+          <strong>main.ts</strong> file. This is where it
+          <strong>bootstraps the AppComponent Class</strong>
+        </li>
+        <li>
+          Angular then looks for the <strong>&lt;app-root></strong> which is
+          located in the index.html file
+        </li>
+        <li>
+          Angular creates, updates, and destroys components as the user moves
+          through the application. These are called
+          <strong>lifecycle Hooks</strong>.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h6>What are custom elements?</h6>
+      <p>
+        Can be used to create reusable components or define new and existing
+        HTML tags
+      </p>
+    </li>
+    <li>
+      <h6>Directives</h6>
+      <ul>
+        <li>Can be <strong>built in</strong> or <strong>custom</strong></li>
+        <li>An example of a built in directive is <strong>ngClass</strong>></li>
+        <li>
+          Directives are <strong>Classes</strong> that can add or modify
+          behavior within a template
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h6>Observables</h6>
+      <ul>
+        <li>
+          Observable pass messages between different parts of an application
+          <strong>asynchronously</strong> which means, multiple pieces of data
+          can be called at once until the component unsubscribes
+        </li>
+        <li>Observables use the RXJS Library</li>
+      </ul>
+    </li>
+
+    <li>
+      <h6>Promises</h6>
+      <ul>
+        <li>
+          Promises deal with only one asynchronous event at a time and were
+          created to prevent callback hell. You can run into the same issue by
+          using a bunch a thenables though so, await and async allows you to
+          control how the behavior is fired off.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h6>Lazy Loading</h6>
+      <ul>
+        <li>
+          Lazy Loading helps with the performace of an application by only
+          loading the necessary parts of an application as they are requested by
+          the user
+        </li>
+        <li>Lazy loading splits the application into a bunch of bundles.</li>
+      </ul>
+    </li>
+    <ul>
+      <br />
+      <h6>Dependency Injection</h6>
+      <p>
+        Allows components, decorators, classes, pipes, and injectables to
+        configure the dependencies they need
+      </p>
+      <p>
+        An example would be using a service by giving it a name within a
+        constructor and injecting the dependency by using important within the
+        component where it is being used
+      </p>
+    </ul>
+    <li>
+      <h6>Session Storage vs Local Storage</h6>
+      <ul>
+        <li>
+          Session Storage - Data expires once a user leaves or closes the
+          browser
+        </li>
+        <li>Local Storage - Data is collected and saved and doesn't expire</li>
+      </ul>
+    </li>
+    <li>
+      <h6>HTML Improvements</h6>
+      <ul>
+        <li>Checks for titles and metadata descriptions</li>
+      </ul>
+    </li>
+    <li>
+      <h6>Speed Up an Application</h6>
+      <ol>
+        <li>
+          Reduce the number of HTTP Requests. If you have already made a
+          request, the data should already be in your application. Make sure you
+          are not requesting more than once
+        </li>
+        <li>Optimize Images</li>
+        <li>Write Mobile first code</li>
+        <li>
+          Use <strong>AOT</strong>(ahead of time) Compile during the build phase
+        </li>
+        <li>Use Pure Pipes. Only customize when necessary</li>
+        <li>
+          Use <strong>trackBy</strong>-a directive that can work with ngFor to
+          identify items in a list of DOM elements)
+        </li>
+      </ol>
+    </li>
+
+    <li>
+      <h6>Security Best Practices for UI Development</h6>
+      <ul>
+        <li>
+          Include everyone in the practices. Everyone needs to be aware of the
+          vulnerabilities within an application
+        </li>
+
+        <li>Use some sort of Cyber Security such as HIPAA or FISMA</li>
+        <li>
+          Automate and Integrate security tools such as CI/CD platforms and
+          other issue trackers
+        </li>
+        <li>
+          Follow Secure software development practices – how to prevent SQL
+          injections
+        </li>
+        <li>Diverse security measures – Firewall, Scanners</li>
+        <li>SONAR QUBE</li>
+      </ul>
+    </li>
+
+    <li>
+      <h6>Cross-site request forgery</h6>
+      <ul>
+        <li>
+          An unintential carry out by the user such as a request to change their
+          password or email
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h6>Route Guards</h6>
+      <ul>
+        <p>
+          Check conditions before a user is allowed to navigate to certain parts
+          of the app
+        </p>
+      </ul>
+    </li>
+    <h6>How do you share the data between unrelated components?</h6>
+    <ul>
+      <li>
+        Services - Objects that get instantiated just once during the lifetime
+        of an application.
+      </li>
+      <li>
+        Subjects - Uses RXJS. Allows values to be multicasted to several
+        Observers
+      </li>
+    </ul>
+    <h6>What is the difference between Subject & Behavior Subject</h6>
+    <ul>
+      <li>
+        Behavior Subject - Holds one value that will return that value or a
+        current value upon subscription.
+        <br />
+        <strong>console.log initial value, then values after</strong>
+      </li>
+      <li>
+        Subject - Does not hold a value and does not return a value upon
+        subscription using Next()
+        <br />
+        <strong> console.log no value initially and ever value after</strong>
+      </li>
+    </ul>
+    <h6>What are the 3 ways to bind data in an application?</h6>
+    <ol>
+      <li>Two-way</li>
+      <li>Property</li>
+      <li>Event</li>
+    </ol>
+    <h6>Router-outlet</h6>
+    <p>Where the Angular component is matched and outputs to the screen</p>
+    <p>Observables can be used over a promise if the code is exclusive</p>
+    <p>
+      A promise can be used over an observable if the API expects a promise and
+      is not using observable.from safety structure.
+    </p>
+  </ul>
+</div>

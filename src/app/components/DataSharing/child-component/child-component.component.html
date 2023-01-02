@@ -1,0 +1,15 @@
+<h4>Child Component</h4>
+
+The child value is:
+<span [ngClass]="{ changeBg: childValue !== 'Child Value' }">{{
+  childValue
+}}</span>
+<br />
+<div *ngIf="showMessage">
+  <span class="message"
+    >Adding Style using NgClass if value is other than "Child Value"</span
+  >
+  <button class="btn" (click)="closeMessage()">x</button>
+</div>
+
+<p>The usernmae is: {{ username }}</p>

@@ -1,0 +1,69 @@
+<p><strong>Data Sharing</strong></p>
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Example of Parent to Child using @Input Decorator</h2>
+    <h4>Parent Component</h4>
+
+    <input type="text" #childValue />
+    <br />
+    <button
+      class="btn btn-primary mt-4 mb-4"
+      (click)="getChildValue(childValue)"
+    >
+      Get Child Value
+    </button>
+    &nbsp; &nbsp;
+    <button class="btn btn-warning" (click)="showCode()">Show Code</button>
+    <br />
+    <app-child-component
+      [childValue]="value"
+      [username]="parentUsername"
+      [showMessage]="showMessage"
+    ></app-child-component>
+
+    <div *ngIf="show" class="code-container col-lg-7">
+      <h4 class="title">
+        Parent Component
+        <button class="close-button btn" (click)="closeCode()">x</button>
+      </h4>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;input type="text" #childValue ><br />
+        &lt;button class="btn btn-primary" (click)="getChildValue(childValue)">
+        Get Child Value &lt;/button>
+        <br />
+        &lt;app-child-component [childValue]="value">&lt;/app-child-component>
+        <br />
+        <br />
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        public value: any = 'Child Value';
+        <br />
+        <br />
+        public getChildValue(inputValue: HTMLInputElement) &#123;
+        <br />
+        this.value = inputValue.value;
+        <br />
+        console.log(this.value);
+        <br />
+        &#125;
+      </div>
+      <h4 class="title">Child Component</h4>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;p>The child value is: &#123; &#123; value &#125; &#125; &lt;/p>
+        <br />
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        &#64;Input() childValue: string = 'Child Value';
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <h2>Example of Component to Component Sharing Using Behavior Subject</h2>
+    <h4>Component A</h4>
+    <app-component-a></app-component-a>
+
+    <h4>Component B</h4>
+    <app-component-b></app-component-b>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.container{
+    background:#9f0426;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    padding:0px 15px 15px 15px;
+
+}
+
+.image-container{
+    padding:0;
+}
+h3{
+    color:#fff;
+    padding: 0 10px;
+}
+
+.container img{
+    width:100%;
+    border-radius:5px;
+    -webkit-border-radius: 5px;
+    padding: 2px 0;
+}
+
+.container button{
+    width:100%;
+}
+

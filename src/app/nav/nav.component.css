@@ -1,0 +1,15 @@
+ul.nav{
+    float:right;
+}
+
+.nav-item{
+    background:#78afc3;
+    margin: 0 5px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-webkit-radius:5px;
+}
+
+.nav-link{
+    color: #fff;
+}

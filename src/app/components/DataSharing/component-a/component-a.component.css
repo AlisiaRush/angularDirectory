@@ -1,0 +1,27 @@
+.code-container{
+    margin:20px 0;
+    background: lightblue;
+    padding:0px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    font-weight:bold;
+}
+.code-content{
+    padding:15px;
+}
+
+.title{
+    color:#fff;
+    background: #0d6efd;
+    padding:5px 10px;
+}
+.subtitle{
+    color:#0d6efd;
+}
+
+.close-button{
+    float:right;
+    padding: 0px 5px;}
+
+

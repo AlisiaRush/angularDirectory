@@ -1,0 +1,34 @@
+<p><strong>Renderer2</strong></p>
+
+<p>
+  The native element property contains the reference to the underlying DOM
+  object which gives us direct access to the DOM, bypassing Angular. This is not
+  advisable for the following reasons.
+</p>
+<ol>
+  <li>
+    Angular keeps the Component & the view in Sync using Templates, data ginding
+    & change detection, etc. All of them are bypassed when we update the DOM
+    directly.
+  </li>
+  <li>
+    DOM Manipulation works only in Browsers. You will not be able to use the APp
+    in other platforms like in a web worker, in Server or in a Desktop, or in
+    the mobile app, etc. where there is no browser.
+  </li>
+
+  <li>
+    The DOM API's do not sanitize the data. Hence it is possible to inject a
+    script, thereby, opening the app to be an easy target for an XSS injection
+    attack.
+  </li>
+</ol>
+
+<p appRenderHighlight>
+  Using Renderer from Highlight Directive. Hover over this to see an example of
+  setAttribute. It should display the title.
+</p>
+
+<div class="container">
+  <p>Using Renderer from Highlight Directive</p>
+</div>
