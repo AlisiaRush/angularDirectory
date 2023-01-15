@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+h4{
+    padding:10px;
+    background:#c4002b;
+    color:#fff;
+}
+
+
+.item-container{
+    background:#f4c45e;
+    color:#000;
+}
+
+.changeBg{
+    background:lime;
+    color:#fff;
+}
+
+.code-container{
+    margin:20px 0;
+    background: lightblue;
+    padding:0px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    font-weight:bold;
+}
+.code-content{
+    padding:15px;
+}
+
+.title{
+    color:#fff;
+    background: #0d6efd;
+    padding:5px 10px;
+}
+.subtitle{
+    color:#0d6efd;
+}
+
+.close-button{
+    float:right;
+    padding: 0px 5px;}
+
+
+.changeBg{
+    background:red;
+    color: #fff;
+    padding:10px;
+}
+
+.changeBg2{
+    border: 1px solid red;
+    background:fff;
+    color: red;
+    padding:10px;
+}
+
+.code-container{
+    margin:20px 0;
+    background: lightblue;
+    padding:0px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    font-weight:bold;
+}
+.code-content{
+    padding:15px;
+}
+
+.title{
+    color:#fff;
+    background: #0d6efd;
+    padding:5px 10px;
+}
+.subtitle{
+    color:#0d6efd;
+}
+
+.close-button{
+    float:right;
+    padding: 0px 5px;
+}
+
+.thumbnail-container{
+    border: 1px solid #000;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background: #c4002b;
+    height:240px;
+    }
+
+.thumbnail{
+    padding:15px;
+    color:#fff;
+    }
+
+.thumbnail-title h6{
+    padding:10px 15px;
+    background:#9f0426;
+    color:#fff;
+}
+.nav li{
+    background:#1d7896;
+    margin: 0 5px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-webkit-radius:5px;
+}
+
+.nav .active{
+    background-color: #055c78;
+}
+
+
+
+
+
+
+

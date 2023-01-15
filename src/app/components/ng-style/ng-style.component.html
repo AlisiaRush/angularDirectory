@@ -1,23 +1,87 @@
 <p><strong>NgStyle</strong></p>
 
-<div
-  *ngFor="let game of games"
-  class="details-container"
-  [ngStyle]="{
-    background: game.available === 'available' ? 'green' : 'black'
-  }"
->
-  <div class="details">
-    <h4>{{ game.name }}</h4>
+<div class="row">
+  <div class="col-lg-4">
+    <div
+      *ngFor="let game of games"
+      class="details-container"
+      [ngStyle]="{
+        background: game.available === 'available' ? 'green' : 'black'
+      }"
+    >
+      <div class="details">
+        <h4>{{ game.name }}</h4>
+      </div>
+      <div class="details">
+        {{ game.console }}
+      </div>
+      <div class="details">{{ game.releaseDate }}</div>
+      <div
+        class="details"
+        [ngStyle]="{
+          color: game.available === 'available' ? 'blue' : 'orange'
+        }"
+      >
+        {{ game.available }}
+      </div>
+    </div>
   </div>
-  <div class="details">
-    {{ game.console }}
-  </div>
-  <div class="details">{{ game.releaseDate }}</div>
-  <div
-    class="details"
-    [ngStyle]="{ color: game.available === 'available' ? 'blue' : 'orange' }"
-  >
-    {{ game.available }}
+
+  <div class="col-lg-8">
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+    <br />
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+      <div class="code-content">
+        <h5 class="subtitle">HTML CODE:</h5>
+        &lt;div *ngFor="let game of games" class="details-container"
+        [ngStyle]="&#123; background: game.available === 'available' ? 'green' :
+        'black' &#125;" >
+        <br />
+        <br />
+        &lt;div class="details"> &lt;h4>&#123; &#123; game.name &#125;
+        &#125;&lt;/h4> &lt;/div>
+        <br />
+        <br />
+        &lt;div class="details"> &#123; &#123; game.console &#125; &#125;
+        &lt;/div>
+        <br />
+        <br />
+        &lt;div class="details">&#123; &#123; game.releaseDate &#125;
+        &#125;&lt;/div> &lt;div class="details" [ngStyle]="&#123; color:
+        game.available === 'available' &#63; 'blue' &#58; 'orange' &#125;" >
+        &#123; &#123; game.available &#125; &#125; &lt;/div>
+        <br />
+        &lt;/div>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        public games = &#91;
+        <br />
+        &#123; id: 1,<br />
+        name: 'The Legend of Zelda',<br />
+        console: 'Nintendo',<br />
+        releaseDate: 1986,<br />
+        available: 'unavailable',<br />
+        &#125;,
+        <br />
+        &#123; id: 2,<br />
+        name: 'Zelda A Link to the Past',<br />
+        console: 'Super Nintendo',<br />
+        releaseDate: 1991,<br />
+        available: 'available',<br />
+        &#125;,
+        <br />
+        &#123; id: 3,<br />
+        name: 'Zelda Ocarina of Time',<br />
+        console: 'N64',<br />
+        releaseDate: 1998,<br />
+        available: 'available',<br />
+        &#125;,
+        <br />
+        &#93;;
+      </div>
+    </div>
   </div>
 </div>

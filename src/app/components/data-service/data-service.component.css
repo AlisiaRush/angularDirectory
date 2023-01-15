@@ -1,0 +1,22 @@
+.container{
+    margin: 30px auto;
+    padding: 20px 30px;
+    background: #bab4b4;
+}
+
+.user-container{
+    display:flex;
+    margin: 5px 0px;
+}
+
+.user-name{
+    width:80%;
+    padding: 10px 30px;
+    background:#eee;
+}
+
+.user-status{
+    width:20%;
+    padding: 10px 40px;
+    background:#fadbd8;
+}

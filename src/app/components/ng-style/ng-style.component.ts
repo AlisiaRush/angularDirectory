@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-style.component.css'],
 })
 export class NgStyleComponent {
+  // public variables
+
+  public showCode: boolean = false;
+
   public games = [
     {
       id: 1,
@@ -29,4 +33,12 @@ export class NgStyleComponent {
       available: 'available',
     },
   ];
+
+  public getCode() {
+    this.showCode = true;
+  }
+
+  public closeCode() {
+    this.showCode = false;
+  }
 }

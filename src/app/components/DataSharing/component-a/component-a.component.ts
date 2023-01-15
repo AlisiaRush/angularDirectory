@@ -16,7 +16,6 @@ export class ComponentAComponent {
   // public methods
   public onButtonClickSubject() {
     this.subjectDataService.raisedSubjectEmitterEvent(this.enteredSubjectText);
-    console.log(this.enteredSubjectText);
   }
 
   public closeCode() {

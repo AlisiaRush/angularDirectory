@@ -1,4 +1,27 @@
-<p><strong>Ng If</strong></p>
+<p><strong>NgIf</strong></p>
 
-<p>If value is empty show me</p>
-<p *ngIf="value === ''">It is true... I am empty!</p>
+<div class="row">
+  <div class="col-lg-6">
+    <p>If value is empty show me</p>
+    <p *ngIf="value === ''">It is true... I am empty!</p>
+
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;p>If value is empty show me &lt;/p>
+        <br />
+        &lt;p *ngIf="value === ''">It is true... I am empty! &lt;/p>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        public value: string = '';
+      </div>
+    </div>
+  </div>
+</div>

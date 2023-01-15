@@ -1,0 +1,23 @@
+<div class="form">
+  <div>
+    <input
+      type="text"
+      placeholder="Username"
+      id="username"
+      [(ngModel)]="username"
+    />
+  </div>
+  <div>
+    <select name="status" id="status" [(ngModel)]="status">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+  </div>
+  <div>
+    <button (click)="addNewUser()">Create User</button>
+  </div>
+
+  <div class="message-container mt-4" *ngIf="message != ''">
+    <p>{{ this.message }}</p>
+  </div>
+</div>

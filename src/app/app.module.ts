@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -27,6 +27,21 @@ import { ServiceComponentBComponent } from './service-component-b/service-compon
 import { ServicesComponent } from './components/services/services.component';
 import { DependencyInjectionComponent } from './components/dependency-injection/dependency-injection.component';
 import { DataServiceComponent } from './components/data-service/data-service.component';
+import { AddUserComponent } from './components/Users/add-user/add-user.component';
+import { UserService } from './Services/user.service';
+import { LoggerMessageComponent } from './sharedComponents/logger-message/logger-message.component';
+import { ComponentInteractionComponent } from './components/component-interaction/component-interaction.component';
+import { AllUsersComponent } from './components/Users/all-users/all-users.component';
+import { UserDetailComponent } from './components/Users/user-detail/user-detail.component';
+import { ObservablesComponent } from './components/Observable/observables/observables.component';
+import { OperatorsComponent } from './components/Observable/operators/operators.component';
+import { UnsubscribeComponent } from './components/Observable/unsubscribe/unsubscribe.component';
+import { RoutingComponent } from './components/Routing/routing/routing.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { CourseComponent } from './components/Courses/course/course.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CourseDetailsComponent } from './components/Courses/course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -54,10 +69,24 @@ import { DataServiceComponent } from './components/data-service/data-service.com
     ServicesComponent,
     DependencyInjectionComponent,
     DataServiceComponent,
+    AddUserComponent,
+    LoggerMessageComponent,
+    ComponentInteractionComponent,
+    AllUsersComponent,
+    UserDetailComponent,
+    ObservablesComponent,
+    OperatorsComponent,
+    UnsubscribeComponent,
+    RoutingComponent,
+    AboutComponent,
+    ContactComponent,
+    CourseComponent,
+    PageNotFoundComponent,
+    CourseDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

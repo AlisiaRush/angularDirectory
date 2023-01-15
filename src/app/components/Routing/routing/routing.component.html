@@ -1,0 +1,117 @@
+<p><strong>Routing</strong></p>
+
+<h5>
+  Different ways to use routing based on Absolute, Relative, Programmatically,
+  and Activated
+</h5>
+
+<div class="container">
+  <a routerLink="/home"> Go to Home Page</a>
+  <br />
+  <br />
+
+  <button class="btn btn-success" (click)="navigate()">
+    Go to Home using programmatically
+  </button>
+  <br />
+  <br />
+
+  <button class="btn btn-warning" (click)="navigateByUrl()">
+    Go to Home using programmatically navigateByUrl
+  </button>
+  <br />
+  <br />
+
+  <button class="btn btn-secondary" (click)="navigateActivatedRoute()">
+    Go to Home Using Activated Route.
+  </button>
+</div>
+
+<div class="container mt-5">
+  <p><strong>Query Parameters vs. Route Parameters</strong></p>
+  <h3>Query Parameters</h3>
+  <ol>
+    <li>
+      <strong>Query Parameter</strong>- Gets specified at the end of the URL
+      separated by "?" They are not required and are not part of the route
+      definition. If you don't specify a value for the query, it will still
+      navigate to the URL.
+    </li>
+
+    <li>
+      <strong>Route Parameter</strong>- Required to determine the route
+      definition. They are required
+    </li>
+  </ol>
+</div>
+
+<div class="container mt-5">
+  <h3>Fragments</h3>
+  <p>
+    <strong
+      >A Fragment in URL is a link which jumps to a section or a content HTML
+      page which contains the ID mentioned in the fragment. A fragment comes
+      after the "#" sign
+    </strong>
+  </p>
+
+  <p>Example: localhost:4200/Products#service</p>
+  <p>
+    We should be able to select a navigation link and anchor down to that
+    component in the same page.
+  </p>
+</div>
+
+<!-- <div class="nav-container mb-5">
+  <ul class="nav nav-pills mt-3">
+    <li
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" routerLink="" fragment="home">Home</a>
+    </li>
+    <li [routerLinkActive]="'active'">
+      <a class="nav-link" routerLink="" fragment="about">About Us</a>
+    </li>
+
+    <li [routerLinkActive]="'active'">
+      <a class="nav-link" routerLink="" fragment="contact">Contact</a>
+    </li>
+
+    <li [routerLinkActive]="'active'">
+      <a class="nav-link" routerLink="" fragment="courses">Courses</a>
+    </li>
+  </ul>
+
+  <app-home id="home"></app-home>
+  <app-about id="about"></app-about>
+  <app-contact id="contact"></app-contact>
+  <app-course id="courses"></app-course>
+</div> -->
+
+<div class="container mt-5">
+  <h3>Child Routing</h3>
+
+  <p>
+    See Courses and look for course-details. You can see the path in routing
+    module.
+  </p>
+</div>
+
+<div class="container mt-5">
+  <h3>Route Guards</h3>
+
+  <p>
+    Used to control whether the user can navigate ot or away from the given
+    route based on some condition.
+  </p>
+
+  <p><strong>Use Cases:</strong></p>
+  <ol>
+    <li>To confirm the navigation operation</li>
+    <li>Asking whether to save data before moving away from a view</li>
+    <li>Allow access to certain parts of the application to specific users</li>
+    <li>Validating the Route parameters before navigating to the route</li>
+    <li>Fetchin some data before you display the compnent view</li>
+  </ol>
+</div>

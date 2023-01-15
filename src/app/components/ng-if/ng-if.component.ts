@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class NgIfComponent {
   // public variables
+
+  public showCode: boolean = false;
   public value: string = '';
+
+  public getCode() {
+    this.showCode = true;
+  }
+
+  public closeCode() {
+    this.showCode = false;
+  }
 }

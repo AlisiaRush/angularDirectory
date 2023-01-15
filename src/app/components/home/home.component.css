@@ -1,19 +1,18 @@
-.thumbnail-container{
-    border: 1px solid #000;
-    border-radius:5px;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    background: #c4002b;
-    height:240px;
-}
-.thumbnail{
-   padding:15px;
-   color:#fff;
+.header-container{
+    background:#1d7896;
+    text-align:center;
+    padding:20px;
 }
 
-h6{
-    padding:10px 15px;
-    background:#9f0426;
+h1{
+    font-size:4rem;
     color:#fff;
 }
+
+.sub-header-title{
+    text-align:center;
+    padding:20px;
+    border-bottom:1px solid #616161;
+}
+
 

@@ -1,9 +1,67 @@
 <p><strong>Ng For Loop</strong></p>
 
-<div class="item-container col-lg-3" *ngFor="let item of items">
-  <h4>{{ item.name }}</h4>
-  <ul [ngClass]="{ changeBg: item.category === 'cookware' }">
-    <li>{{ item.cost }}</li>
-    <li>{{ item.category }}</li>
-  </ul>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="item-container" *ngFor="let item of items">
+      <h4>{{ item.name }}</h4>
+      <ul [ngClass]="{ changeBg: item.category === 'cookware' }">
+        <li>{{ item.cost }}</li>
+        <li>{{ item.category }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+    <br />
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;div class="item-container" *ngFor="let item of items">
+        <br />
+        &lt;h4>&#123; &#123; item.name &#125; &#125;&lt;/h4>
+        <br />&lt;ul [ngClass]="&#123; changeBg: item.category === 'cookware'
+        &#125;">
+        <br />
+        &lt;li>&#123; &#123; item.cost &#125; &#125;&lt;/li>
+        <br />
+        &lt;li>&#123; &#123;item.category &#125; &#125;&lt;/li>
+        <br />
+        &lt;/ul>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+
+        <br />
+        public items = &#91; &#123; <br />
+        id: 1, <br />
+        name: 'Carrots',<br />
+        cost: 1.18,<br />
+        category: 'produce',
+        <br />
+        &#125;,
+        <br />
+        &#123;
+        <br />id: 2, <br />
+        name: 'Orange Juice', <br />
+        cost: 2.32, <br />
+        category: 'beverage', <br />&#125;,
+        <br />
+        &#123;
+        <br />
+        id: 3, <br />
+        name: 'Frying Pan', <br />
+        cost: 15.35,
+        <br />category: 'cookware',
+        <br />
+        &#125;,
+        <br />
+        &#93;;
+        <br />
+      </div>
+    </div>
+  </div>
 </div>

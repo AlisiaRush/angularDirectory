@@ -1,0 +1,12 @@
+<div class="container" *ngIf="usersToo !== undefined">
+  <div>
+    <img [src]="usersToo.avatar" height="120" width="120" />
+  </div>
+  <div class="user-detail">
+    <p><b>Name:</b> {{ usersToo.name }}</p>
+    <p><b>Occupation:</b> {{ usersToo.job }}</p>
+    <p><b>Country:</b> {{ usersToo.country }}</p>
+    <p><b>Gender:</b> {{ usersToo.gender }}</p>
+    <p><b>Age:</b>{{ usersToo.age }}</p>
+  </div>
+</div>

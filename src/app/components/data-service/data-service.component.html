@@ -1,1 +1,91 @@
-<p>data-service works!</p>
+<p><strong>Data Service</strong></p>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="container">
+      <app-add-user></app-add-user>
+
+      <div class="user-container" *ngFor="let user of users">
+        <div class="user-name">{{ user.name }}</div>
+        <div class="user-status">{{ user.status }}</div>
+        <div class="user-remove m-2">
+          <button class="btn btn-danger">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <br />
+    <br />
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+      <div class="code-content">
+        <h5 class="subtitle">DATA SERVICE HTML FILE:</h5>
+        &lt;app-add-user>&lt;/app-add-user>
+        <br />
+        &lt;div class="user-container" *ngFor="let user of users">
+        <br />
+        &lt;div class="user-name">&#123; &#123; user.name &#125;&#125; &lt;/div>
+        <br />
+        &lt;div class="user-status">&#123; &#123; user.status &#125;&#125;
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">DATA SERVICE TYPESCRIPT FILE:</h5>
+        constructor(private userService: UserService) &#123;&#125;
+        <br />
+        public users: &#123; name: string; status: string &#123;&#91;&#93; =
+        &#91;&#93;;
+        <br />
+        ngOnInit() &#123;
+        <br />
+        this.users = this.userService.users;
+        <br />&#125;
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">ADD USERS HTML FILE:</h5>
+        &lt;div class="form">
+        <br />
+        &lt;div>
+        <br />
+        &lt;input type="text" placeholder="Username" id="username"
+        [(ngModel)]="username" />
+        <br />
+        &lt;/div>
+        <br />
+        &lt;div>
+        <br />
+        &lt;select name="status" id="status" [(ngModel)]="status">
+        <br />
+        &lt;option value="active">Active&lt;/option>
+        <br />
+        &lt;option value="inactive">Inactive&lt;/option>
+        <br />
+        &lt;/select>
+        <br />
+        &lt;/div>
+        <br />
+        &lt;div> &lt;button (click)="addNewUser()">Create User&lt;/button>
+        &lt;/div> &lt;/div> &lt;/div>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">ADD USERS TYPESCRIPT FILE :</h5>
+        export class AddUserComponent &#123; constructor(private userService:
+        UserService) &#123;&#125;
+        <br />public username: string = ''; <br />
+        public status: string = 'active';
+        <br />
+        public addNewUser() &#123;
+        <br />
+        this.userService.addNewUser(this.username, this.status);
+        console.log(this.userService.users);
+        <br />
+        &#125;
+      </div>
+    </div>
+  </div>
+</div>

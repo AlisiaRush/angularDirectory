@@ -1,8 +1,55 @@
 <p><strong>@HostListener</strong></p>
 
-<div class="hostListener-container">
-  <p appHostListenerHover>
-    The following paragraph should change padding upon hover, and revert back to
-    original styling on mouseleave
-  </p>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="hostListener-container">
+      <p appHostListenerHover>
+        The following paragraph should change padding upon hover, and revert
+        back to original styling on mouseleave
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;p appHostListenerHover> The following paragraph should change
+        padding upon hover, and revert back to original styling on mouseleave
+        &lt;/p>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        import &#123; Directive, ElementRef, HostListener, Renderer2 &#125; from
+        '@angular/core';
+        <br />
+        <br />
+        &#64;Directive(&#123; selector: '[appHostListenerHover]', &#125;)
+        <br />export class HostListenerHoverDirective &#123;
+        <br />constructor(private element: ElementRef, private renderer:
+        Renderer2) &#123; &#125;
+        <br />
+        <br />
+        &#64;HostListener('mouseenter') onmouseover() &#123;
+        this.renderer.setStyle(this.element.nativeElement, 'margin', '5px
+        10px'); this.renderer.setStyle(this.element.nativeElement, 'padding',
+        '30px 30px'); this.renderer.setStyle(this.element.nativeElement,
+        'transition', '0.5s');
+        <br />
+        &#125;
+        <br />
+        <br />
+        &#64;HostListener('mouseleave') onmouseout() &#123;
+        this.renderer.setStyle(this.element.nativeElement, 'margin', '0px');
+        this.renderer.setStyle(this.element.nativeElement, 'padding', '15px');
+        this.renderer.setStyle(this.element.nativeElement, 'transition',
+        '0.5s'); &#125;
+        <br />
+        &#125;
+      </div>
+    </div>
+  </div>
 </div>

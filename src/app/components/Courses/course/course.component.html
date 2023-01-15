@@ -1,0 +1,40 @@
+<p><strong>All Courses</strong></p>
+<div class="search-wrapper">
+  <div class="search-container">
+    <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+  </div>
+</div>
+
+<div class="home-container">
+  <div class="row">
+    <ng-container *ngFor="let course of courseList">
+      <div class="col-lg-3 mb-5">
+        <div
+          *ngIf="
+            searchText === '' || course.title.toLowerCase().includes(searchText)
+          "
+        >
+          <div class="thumbnail-container">
+            <div class="thumbnail-title">
+              <h6>{{ course.title }}</h6>
+            </div>
+            <div class="thumbnail">
+              <p>
+                {{ course.description }}
+              </p>
+              <a class="btn btn-warning" [routerLink]="course.link">Go</a>
+              &nbsp;
+              <a
+                class="btn btn-light"
+                routerLink="/courses/course-details/{{ course.id }}"
+                >Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <router-outlet></router-outlet>
+  </div>
+  <!--end home-container-->
+</div>

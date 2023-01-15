@@ -1,0 +1,16 @@
+.course-container{
+    margin: 20px auto;
+    padding-bottom:20px;
+    background-color: #9f0426;
+    color:#fff;
+}
+
+.course-container img{
+    width:100%;
+}
+
+.course-details{
+    display: flex;
+    margin: 20px 0px;
+    text-align: center;
+}

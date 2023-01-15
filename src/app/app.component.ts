@@ -8,6 +8,8 @@ import { SubjectDataService } from './subject-data.service';
   providers: [SubjectDataService],
 })
 export class AppComponent {
+  // public method
+
   constructor(private subjectDataService: SubjectDataService) {}
   title = 'Angular Directory';
   logo = 'assets/images/logo.png';

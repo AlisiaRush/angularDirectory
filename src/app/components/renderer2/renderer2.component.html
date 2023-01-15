@@ -1,34 +1,75 @@
 <p><strong>Renderer2</strong></p>
 
-<p>
-  The native element property contains the reference to the underlying DOM
-  object which gives us direct access to the DOM, bypassing Angular. This is not
-  advisable for the following reasons.
-</p>
-<ol>
-  <li>
-    Angular keeps the Component & the view in Sync using Templates, data ginding
-    & change detection, etc. All of them are bypassed when we update the DOM
-    directly.
-  </li>
-  <li>
-    DOM Manipulation works only in Browsers. You will not be able to use the APp
-    in other platforms like in a web worker, in Server or in a Desktop, or in
-    the mobile app, etc. where there is no browser.
-  </li>
+<div class="row">
+  <div class="col-lg-5">
+    <p>
+      The native element property contains the reference to the underlying DOM
+      object which gives us direct access to the DOM, bypassing Angular. This is
+      not advisable for the following reasons.
+    </p>
+    <ol>
+      <li>
+        Angular keeps the Component & the view in Sync using Templates, data
+        ginding & change detection, etc. All of them are bypassed when we update
+        the DOM directly.
+      </li>
+      <li>
+        DOM Manipulation works only in Browsers. You will not be able to use the
+        APp in other platforms like in a web worker, in Server or in a Desktop,
+        or in the mobile app, etc. where there is no browser.
+      </li>
 
-  <li>
-    The DOM API's do not sanitize the data. Hence it is possible to inject a
-    script, thereby, opening the app to be an easy target for an XSS injection
-    attack.
-  </li>
-</ol>
+      <li>
+        The DOM API's do not sanitize the data. Hence it is possible to inject a
+        script, thereby, opening the app to be an easy target for an XSS
+        injection attack.
+      </li>
+    </ol>
 
-<p appRenderHighlight>
-  Using Renderer from Highlight Directive. Hover over this to see an example of
-  setAttribute. It should display the title.
-</p>
+    <p appRenderHighlight>
+      Using Renderer from Highlight Directive. Hover over this to see an example
+      of setAttribute. It should display the title.
+    </p>
 
-<div class="container">
-  <p>Using Renderer from Highlight Directive</p>
+    <div class="container">
+      <p>Using Renderer from Highlight Directive</p>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <button (click)="getCode()" class="btn btn-warning">Show Code</button>
+    <div class="code-container" *ngIf="showCode">
+      <button class="close-button btn" (click)="closeCode()">x</button>
+      <div class="code-content">
+        <h5 class="subtitle">HTML FILE:</h5>
+        &lt;p appRenderHighlight> Using Renderer from Highlight Directive. Hover
+        over this to see an example of setAttribute. It should display the
+        title. &lt;/p>
+      </div>
+
+      <div class="code-content">
+        <h5 class="subtitle">TYPESCRIPT FILE:</h5>
+        <p>renderHighlight.directive.ts</p>
+        import &#123; Directive, ElementRef, OnInit, Renderer2 &#125; from
+        '&#64;angular/core';
+        <br />
+        <br />
+        &#64;Directive(&#123; selector: '[appRenderHighlight]', &#125;)
+        <br />
+        export class RenderHighlightDirective implements OnInit &#125;
+        constructor(private element: ElementRef, private renderer: Renderer2)
+        &#123; &#125;
+        <br />
+        <br />
+        ngOnInit() &#123; this.renderer.setStyle( this.element.nativeElement,
+        'backgroundColor', 'red' );
+        this.renderer.setStyle(this.element.nativeElement, 'color', 'white');
+        this.renderer.addClass(this.element.nativeElement, 'container');
+        this.renderer.setAttribute( this.element.nativeElement, 'title', 'This
+        is example of setAttribute' ); &#125;
+        <br />
+        &#125;
+      </div>
+    </div>
+  </div>
 </div>
