@@ -42,6 +42,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CourseComponent } from './components/Courses/course/course.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CourseDetailsComponent } from './components/Courses/course-details/course-details.component';
+import { CourseGuardService } from './Services/course-guard.service';
+import { AuthService } from './Services/auth.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +88,7 @@ import { CourseDetailsComponent } from './components/Courses/course-details/cour
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 
-  providers: [UserService],
+  providers: [UserService, CourseGuardService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

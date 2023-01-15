@@ -16,4 +16,8 @@
   <li [routerLinkActive]="'active'">
     <a class="nav-link" [routerLink]="'courses'">Courses</a>
   </li>
+  <span>
+    <li (click)="login()">Login</li>
+    <li (click)="logout()">Logout</li>
+  </span>
 </ul>

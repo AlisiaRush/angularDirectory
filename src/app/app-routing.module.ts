@@ -23,6 +23,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CourseComponent } from './components/Courses/course/course.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CourseDetailsComponent } from './components/Courses/course-details/course-details.component';
+import { CourseGuardService } from './Services/course-guard.service';
 
 const routes: Routes = [
   // Main Pages
@@ -31,14 +32,28 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'courses', component: CourseComponent },
-  // { path: 'course-details/:id', component: CourseDetailsComponent },
   {
     path: 'courses',
+    component: CourseComponent,
+    canActivate: [CourseGuardService],
+  },
+  {
+    path: 'courses',
+    canActivateChild: [CourseGuardService],
     children: [
       { path: 'course-details/:id', component: CourseDetailsComponent },
     ],
   },
+  // {
+  //   path: 'courses',
+  //   children: [
+  //     {
+  //       path: 'course-details/:id',
+  //       component: CourseDetailsComponent,
+  //       canActivateChild: [CourseGuardService],
+  //     },
+  //   ],
+  // },
   // Sub Pages
   { path: 'data-sharing', component: ParentComponentComponent },
   { path: 'terms', component: TermsComponent },

@@ -13,3 +13,11 @@ ul.nav{
 .nav-link{
     color: #fff;
 }
+
+span li{
+    display:inline;
+    float:right;
+    background: white;
+    padding: 10px;
+    cursor:pointer;
+}
