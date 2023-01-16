@@ -11,3 +11,21 @@
     background:#38458c;
     padding:5px 15px;
 }
+
+.spinner{
+    border: 16px solid rgb(179, 177, 177);
+    border-top: 16px solid #222;
+    border-radius:50%;
+    width:80px;
+    height:80px;
+    animation: spin 700ms linear infinite;
+    top:50%;
+    left:50%;
+    position:absolute;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg)}
+    100% {transform: rotate(-360deg)}
+}
+

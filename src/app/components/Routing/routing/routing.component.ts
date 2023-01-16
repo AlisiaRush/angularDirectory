@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './routing.component.html',
   styleUrls: ['./routing.component.css'],
 })
-export class RoutingComponent implements OnInit {
+export class RoutingComponent {
   constructor(private route: Router, private activatedRoute: ActivatedRoute) {}
 
   // public methods
@@ -23,12 +23,12 @@ export class RoutingComponent implements OnInit {
     this.route.navigate(['/home'], { relativeTo: this.activatedRoute });
   }
 
-  ngOnInit() {
-    // this.activatedRoute.fragment.subscribe((val) => {
-    //   console.log(val);
-    //   this.jumpTo(val);
-    // });
-  }
+  // ngOnInit() {
+  // this.activatedRoute.fragment.subscribe((val) => {
+  //   console.log(val);
+  //   this.jumpTo(val);
+  // });
+  //}
 
   // public jumpTo(section: any) {
   //   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });

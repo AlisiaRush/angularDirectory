@@ -1,0 +1,37 @@
+<p><strong>Custom Pipes</strong></p>
+
+<div class="container">
+  <div>
+    <input
+      [(ngModel)]="filterText"
+      type="text"
+      placeholder="Search by gender"
+      style="width: 450px; padding: 2px 20px; margin: 10px 0px; height: 30px"
+    />
+  </div>
+  <table id="student">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Marks</th>
+      <th>Percentage</th>
+      <th>DOB</th>
+      <th>Gender</th>
+    </tr>
+    <tr *ngFor="let std of students | filterStudent : filterText">
+      <td>{{ std.name }}</td>
+      <td>{{ std.course }}</td>
+      <td><input type="number" value="std.marks" [(ngModel)]="std.marks" /></td>
+      <td>{{ std.marks | percentage }}</td>
+      <td>{{ std.DOB | date : "fullDate" | uppercase }}</td>
+      <td>{{ std.gender | lowercase }}</td>
+    </tr>
+  </table>
+  <br /><br />
+  <button (click)="AddDummyStudent()" class="btn btn-success">
+    Add Student</button
+  >&nbsp;
+  <button (click)="ChangeGender()" class="btn btn-secondary">
+    Change Gender
+  </button>
+</div>

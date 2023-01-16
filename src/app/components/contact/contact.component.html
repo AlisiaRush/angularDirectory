@@ -1,37 +1,43 @@
-<p><strong>Contact Us</strong></p>
-
-<div class="container col-lg-6">
-  <form>
-    <label class="form-label">First Name</label>
-    <input class="form-control" type="text" />
-
-    <label class="form-labe">Last Name</label>
-    <input class="form-control" type="text" />
-
-    <label class="form-labe">Email</label>
-    <input class="form-control" type="text" />
-
-    <div class="row mt-3">
-      <div class="col-lg-4">
-        <div class="label form-label">City</div>
-        <select class="form-control">
-          <option>One</option>
+<div class="container">
+  <div style="text-align: center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input
+          [(ngModel)]="firstName"
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Your name.."
+        />
+        <label for="lname">Last Name</label>
+        <input
+          [(ngModel)]="lastName"
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Your last name.."
+        />
+        <label for="country">Country</label>
+        <select id="country" name="country" [(ngModel)]="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
         </select>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="label form-label">State</div>
-        <select class="form-control">
-          <option>One</option>
-        </select>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="label form-label">Country</div>
-        <select class="form-control">
-          <option>One</option>
-        </select>
-      </div>
+        <label for="subject">Subject</label>
+        <textarea
+          [(ngModel)]="subject"
+          id="subject"
+          name="subject"
+          placeholder="Write something.."
+          style="height: 170px"
+        ></textarea>
+        <input type="submit" value="Submit" (click)="ProcessForm()" />
+      </form>
     </div>
-  </form>
+  </div>
 </div>

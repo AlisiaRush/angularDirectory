@@ -200,78 +200,38 @@ export class CoursesService {
       type: 'Premium',
       price: '$120.00',
     },
+    {
+      id: 16,
+      title: 'Custom Pipes',
+      description: 'Learn how to create your own custom pipes.',
+      link: '/custom-pipes',
+      name: 'Custom Pipes',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '20 hours',
+      type: 'Premium',
+      price: '$120.00',
+    },
+    {
+      id: 16,
+      title: 'Pure Pipes',
+      description: 'Learn how to use Pure Pipes in Angular.',
+      link: '/pure-pipes',
+      name: 'Pure Pipes',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '20 hours',
+      type: 'Premium',
+      price: '$120.00',
+    },
   ];
 
-  // public lessons = [
-  //   {
-  //     id: 1,
-  //     name: 'JavaScript',
-  //     image: '../../../../assets/images/courses/course-image-1.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Vanilla JavaScript',
-  //     duration: '20 hours',
-  //     type: 'Premium',
-  //     price: '$120.00',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Angular',
-  //     image: '../../../../assets/images/courses/course-image-2.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Angular Basics',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'React',
-  //     image: '../../../../assets/images/courses/course-image-3.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn React Basics',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Advanced JavaScript',
-  //     image: '../../../../assets/images/courses/course-image-5.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Advanced Javascript',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Advanced React',
-  //     image: '../../../../assets/images/courses/course-image-7.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Advanced React',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'Basic HTML/CSS',
-  //     image: '../../../../assets/images/courses/course-image-8.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Basic HTML/CSS',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  //   {
-  //     id: 7,
-  //     name: 'Advanced HTML/CSS',
-  //     image: '../../../../assets/images/courses/course-image-9.jpeg',
-  //     author: 'Alisia Rush',
-  //     description: 'Learn Advanced HTML/CSS',
-  //     duration: '40 hours',
-  //     type: 'Premium',
-  //     price: '$140.00',
-  //   },
-  // ];
+  public getAllCourses(): any {
+    const courseLister = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.courses);
+      }, 1000);
+    });
+    return courseLister;
+  }
 }

@@ -13,10 +13,18 @@ export class CourseComponent implements OnInit {
 
   public courseList: any;
 
-  constructor(private courseService: CoursesService) {}
+  constructor(
+    private courseService: CoursesService,
+    private activat3edRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.courseList = this.courseService.courses;
+    // this.courseList = this.courseService.courses;
+
+    // this.courseService.getAllCourses().then((data: any) => {
+    //   this.courseList = data;
+    // });
+    this.courseList = this.activat3edRoute.snapshot.data['courses'];
   }
 
   public onSearchTextEntered(searchValue: string) {

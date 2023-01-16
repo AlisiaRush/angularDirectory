@@ -24,17 +24,26 @@ import { CourseComponent } from './components/Courses/course/course.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CourseDetailsComponent } from './components/Courses/course-details/course-details.component';
 import { CourseGuardService } from './Services/course-guard.service';
+import { CanDeactivateGuardService } from './Services/can-deactivate-guard.service';
+import { CourseResolveService } from './Services/course-resolve.service';
+import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
+import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 
 const routes: Routes = [
   // Main Pages
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'componentInteraction', component: ComponentInteractionComponent },
+  {
+    path: 'contact',
+    canDeactivate: [CanDeactivateGuardService],
+    component: ContactComponent,
+  },
   {
     path: 'courses',
     component: CourseComponent,
+    resolve: { courses: CourseResolveService },
     canActivate: [CourseGuardService],
   },
   {
@@ -44,39 +53,32 @@ const routes: Routes = [
       { path: 'course-details/:id', component: CourseDetailsComponent },
     ],
   },
-  // {
-  //   path: 'courses',
-  //   children: [
-  //     {
-  //       path: 'course-details/:id',
-  //       component: CourseDetailsComponent,
-  //       canActivateChild: [CourseGuardService],
-  //     },
-  //   ],
-  // },
-  // Sub Pages
+  { path: 'custom-pipes', component: CustomPipesComponent },
   { path: 'data-sharing', component: ParentComponentComponent },
-  { path: 'terms', component: TermsComponent },
+  { path: 'dataServices', component: DataServiceComponent },
+  { path: 'dependencyInjection', component: DependencyInjectionComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'hostBinding', component: HostBindingComponent },
+  { path: 'hostListener', component: HostListenerComponent },
   { path: 'ngClass', component: NgClassComponent },
   { path: 'ngFor', component: NgForComponent },
-  { path: 'ngStyle', component: NgStyleComponent },
   { path: 'ngIf', component: NgIfComponent },
-  { path: 'renderer2', component: Renderer2Component },
-  { path: 'hostListener', component: HostListenerComponent },
-  { path: 'hostBinding', component: HostBindingComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'dependencyInjection', component: DependencyInjectionComponent },
-  { path: 'dataServices', component: DataServiceComponent },
-  { path: 'componentInteraction', component: ComponentInteractionComponent },
+  { path: 'ngStyle', component: NgStyleComponent },
   { path: 'observables', component: ObservablesComponent },
   { path: 'operators', component: OperatorsComponent },
-  { path: 'unsubscribe', component: UnsubscribeComponent },
+  { path: 'pure-pipes', component: PurePipeComponent },
+  { path: 'renderer2', component: Renderer2Component },
   { path: 'routing', component: RoutingComponent },
+  { path: 'services', component: ServicesComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'unsubscribe', component: UnsubscribeComponent },
+
   // Check for non existing routes or pages that are not accessible
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
+  // imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })

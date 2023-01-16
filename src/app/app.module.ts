@@ -17,11 +17,11 @@ import { NgForComponent } from './components/ng-for/ng-for.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { NgIfComponent } from './components/ng-if/ng-if.component';
 import { Renderer2Component } from './components/renderer2/renderer2.component';
-import { RenderHighlightDirective } from './customDirectives/renderHighlight.directive';
+import { RenderHighlightDirective } from './CustomDirectives/renderHighlight.directive';
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
-import { HostListenerHoverDirective } from './customDirectives/hostListener-hover.directive';
+import { HostListenerHoverDirective } from './CustomDirectives/hostListener-hover.directive';
 import { HostBindingComponent } from './components/host-binding/host-binding.component';
-import { HostBindingHighlightDirective } from './customDirectives/host-binding-highlight.directive';
+import { HostBindingHighlightDirective } from './CustomDirectives/host-binding-highlight.directive';
 import { ServiceComponentAComponent } from './service-component-a/service-component-a.component';
 import { ServiceComponentBComponent } from './service-component-b/service-component-b.component';
 import { ServicesComponent } from './components/services/services.component';
@@ -44,51 +44,67 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CourseDetailsComponent } from './components/Courses/course-details/course-details.component';
 import { CourseGuardService } from './Services/course-guard.service';
 import { AuthService } from './Services/auth.service';
+import { CanDeactivateGuardService } from './Services/can-deactivate-guard.service';
+import { CourseResolveService } from './Services/course-resolve.service';
+import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
+import { PercentagesPipe } from './CustomPipes/percentages.pipe';
+import { FilterPipe } from './CustomPipes/filter.pipe';
+import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    ParentComponentComponent,
+    AboutComponent,
+    AllUsersComponent,
+    AddUserComponent,
     ChildComponentComponent,
-    TermsComponent,
-    HomeComponent,
     ComponentAComponent,
     ComponentBComponent,
-    SearchComponent,
-    NgClassComponent,
-    NgForComponent,
-    NgStyleComponent,
-    NgIfComponent,
-    Renderer2Component,
-    RenderHighlightDirective,
-    HostListenerComponent,
-    HostListenerHoverDirective,
+    ComponentInteractionComponent,
+    ContactComponent,
+    CourseComponent,
+    CourseDetailsComponent,
+    CustomPipesComponent,
+    DataServiceComponent,
+    DependencyInjectionComponent,
+    HomeComponent,
     HostBindingComponent,
     HostBindingHighlightDirective,
+    HostListenerComponent,
+    HostListenerHoverDirective,
+    LoggerMessageComponent,
+    NavComponent,
+    NgClassComponent,
+    NgForComponent,
+    NgIfComponent,
+    NgStyleComponent,
+    ObservablesComponent,
+    OperatorsComponent,
+    PageNotFoundComponent,
+    ParentComponentComponent,
+    PercentagesPipe,
+    Renderer2Component,
+    RenderHighlightDirective,
+    RoutingComponent,
     ServiceComponentAComponent,
     ServiceComponentBComponent,
     ServicesComponent,
-    DependencyInjectionComponent,
-    DataServiceComponent,
-    AddUserComponent,
-    LoggerMessageComponent,
-    ComponentInteractionComponent,
-    AllUsersComponent,
+    SearchComponent,
+    TermsComponent,
     UserDetailComponent,
-    ObservablesComponent,
-    OperatorsComponent,
     UnsubscribeComponent,
-    RoutingComponent,
-    AboutComponent,
-    ContactComponent,
-    CourseComponent,
-    PageNotFoundComponent,
-    CourseDetailsComponent,
+    FilterPipe,
+    PurePipeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 
-  providers: [UserService, CourseGuardService, AuthService],
+  providers: [
+    UserService,
+    CourseGuardService,
+    AuthService,
+    CanDeactivateGuardService,
+    CourseResolveService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

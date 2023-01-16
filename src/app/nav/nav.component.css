@@ -16,7 +16,7 @@ ul.nav{
 
 span li{
     display:inline;
-    float:right;
+    float:left;
     background: white;
     padding: 10px;
     cursor:pointer;

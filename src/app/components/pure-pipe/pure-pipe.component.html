@@ -1,0 +1,49 @@
+<p><strong>Pure Pipes</strong></p>
+
+<p>
+  Go to the following Pipe to see how Pure Pipes work. Here are the instructions
+  to view the code...
+</p>
+
+<ol>
+  <li>
+    In the directory... go to the following path: CustomPipes/percentagesPipe.ts
+  </li>
+  <li>
+    You will see the value for pure here under
+    <br />
+    <strong>
+      @Pipe(( <br />
+      name: 'percentage', <br />
+      pure: false <br />
+      ));
+    </strong>
+    <p>
+      * If you don't explicity specify that this is a pure pipe, it will render
+      as pure unless you set the value to false
+    </p>
+  </li>
+</ol>
+
+<h4>What is a Pure Pipe?</h4>
+<p>
+  Pure pipes are those pipes which gets executed when Angular detects a pure
+  change on the input value.
+</p>
+
+<p>
+  <strong>Example:</strong>
+  <br />
+  &lt;div> &#123; &#123; std.gender &#124; lowercase &#125; &#125; &lt;/div>
+</p>
+
+<p><strong>Pure Pipes are only needed if a Pure Change has occured</strong></p>
+<p>
+  A <strong>"Pure Change"</strong> is either a change of a primitive input value
+  <strong>(String, Boolean, Number, etc.)</strong>
+</p>
+
+<p>
+  Go to Custom Pipes page to see example here:
+  <a routerLink="/custom-pipes">Custom Pipes</a>
+</p>
