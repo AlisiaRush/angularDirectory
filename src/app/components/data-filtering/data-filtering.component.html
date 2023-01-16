@@ -1,0 +1,56 @@
+<p><strong>Data Filtering</strong></p>
+
+<p>Instead of using a pipe. We can filter and sort data within it's class.</p>
+
+<div>
+  <h3>How to Filter Data for Students:</h3>
+</div>
+
+<div class="container">
+  <div>
+    <input
+      [(ngModel)]="filterText"
+      type="text"
+      placeholder="Search by gender"
+      style="width: 450px; padding: 2px 20px; margin: 10px 0px; height: 30px"
+    />
+    <div>
+      <span style="color: red; font-style: italic; font-weight: bold"
+        >Example of using async | with a promise</span
+      >
+      <h3>Total Students: {{ totalStudents | async }}</h3>
+    </div>
+    <table id="student">
+      <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Marks</th>
+        <th>Percentage</th>
+        <th>DOB</th>
+        <th>Gender</th>
+      </tr>
+      <tr *ngFor="let std of filterStudents">
+        <td>{{ std.name }}</td>
+        <td>{{ std.course }}</td>
+        <td>
+          <input type="number" value="std.marks" [(ngModel)]="std.marks" />
+        </td>
+        <td>
+          {{ std.marks }}
+          <!--This will be a PURE CHANGE. It's data type is a number-->
+        </td>
+        <td>{{ std.DOB | date : "fullDate" | uppercase }}</td>
+        <td>{{ std.gender | lowercase }}</td>
+      </tr>
+    </table>
+    <br /><br />
+    <button (click)="AddDummyStudent()" class="btn btn-success">
+      <!--This is an IMPURE CHANGE. You won't see the new student added until the input box is cleared because the reference is not changing. Therefore, the change is not pure.-->
+      Add Student</button
+    >&nbsp;
+    <button (click)="ChangeGender()" class="btn btn-secondary">
+      <!--Example is IMPURE CHANGE-->
+      Change Gender
+    </button>
+  </div>
+</div>

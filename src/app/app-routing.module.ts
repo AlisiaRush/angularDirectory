@@ -28,6 +28,7 @@ import { CanDeactivateGuardService } from './Services/can-deactivate-guard.servi
 import { CourseResolveService } from './Services/course-resolve.service';
 import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
 import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
+import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
 
 const routes: Routes = [
   // Main Pages
@@ -55,6 +56,7 @@ const routes: Routes = [
   },
   { path: 'custom-pipes', component: CustomPipesComponent },
   { path: 'data-sharing', component: ParentComponentComponent },
+  { path: 'data-filtering', component: DataFilteringComponent },
   { path: 'dataServices', component: DataServiceComponent },
   { path: 'dependencyInjection', component: DependencyInjectionComponent },
   { path: 'home', component: HomeComponent },

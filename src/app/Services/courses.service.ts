@@ -46,6 +46,18 @@ export class CoursesService {
     },
     {
       id: 4,
+      title: 'Data Filtering',
+      description: 'Filtering and Sorting Data without using Pipes',
+      link: '/data-filtering',
+      name: 'Data Sharing',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '20 hours',
+      type: 'Premium',
+      price: '$120.00',
+    },
+    {
+      id: 4,
       title: 'Data Sharing',
       description:
         'Used to share data between components. You can use Parent to Child, Child to Parent or use Subject and Service.',

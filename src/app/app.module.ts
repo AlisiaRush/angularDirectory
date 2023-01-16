@@ -50,6 +50,7 @@ import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.com
 import { PercentagePipe } from './CustomPipes/percentage.pipe';
 import { FilterPipe } from './CustomPipes/filter.pipe';
 import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
+import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
     UnsubscribeComponent,
     FilterPipe,
     PurePipeComponent,
+    DataFilteringComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 
