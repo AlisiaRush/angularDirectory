@@ -37,25 +37,38 @@ export class CustomPipesComponent implements OnInit {
   }
 
   AddDummyStudent() {
-    // let studentCopy = Object.assign([], this.students)
-    // studentCopy.push({name: 'TEST', course: 'TEST', marks: 520, DOB: new Date(), gender: 'Female'});
-    // this.students = studentCopy;
-    this.students.push({
+    //EXAMPLE OF PURE CHANGE
+    let studentCopy = Object.assign([], this.students);
+    studentCopy.push({
       name: 'TEST',
       course: 'TEST',
       marks: 520,
       DOB: new Date(),
       gender: 'Female',
     });
-    this.filteredStudents = this.filterStudentByGender(this._filterText);
+    this.students = studentCopy;
+
+    //EXAMPLE OF IMPURE CHANGE
+    // this.students.push({
+    //   name: 'TEST',
+    //   course: 'TEST',
+    //   marks: 520,
+    //   DOB: new Date(),
+    //   gender: 'Female',
+    // });
+    // this.filteredStudents = this.filterStudentByGender(this._filterText);
   }
 
   ChangeGender() {
-    // let studentCopy = Object.assign([], this.students)
+    // PURE CHANGE
+    let studentCopy: any = Object.assign([], this.students);
+    studentCopy[0].gender = 'Female';
     // studentCopy[0].gender = 'Female';
-    // this.students = studentCopy;
-    this.students[0].gender = 'Female';
-    this.filteredStudents = this.filterStudentByGender(this._filterText);
+    this.students = studentCopy;
+
+    //IMPURE CHANGE
+    // this.students[0].gender = 'Female';
+    // this.filteredStudents = this.filterStudentByGender(this._filterText);
   }
 
   onMouseMove() {}

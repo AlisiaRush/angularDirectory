@@ -47,7 +47,7 @@ import { AuthService } from './Services/auth.service';
 import { CanDeactivateGuardService } from './Services/can-deactivate-guard.service';
 import { CourseResolveService } from './Services/course-resolve.service';
 import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
-import { PercentagesPipe } from './CustomPipes/percentages.pipe';
+import { PercentagePipe } from './CustomPipes/percentage.pipe';
 import { FilterPipe } from './CustomPipes/filter.pipe';
 import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 
@@ -82,7 +82,7 @@ import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
     OperatorsComponent,
     PageNotFoundComponent,
     ParentComponentComponent,
-    PercentagesPipe,
+    PercentagePipe,
     Renderer2Component,
     RenderHighlightDirective,
     RoutingComponent,

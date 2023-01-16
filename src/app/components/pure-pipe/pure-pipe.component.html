@@ -39,11 +39,35 @@
 
 <p><strong>Pure Pipes are only needed if a Pure Change has occured</strong></p>
 <p>
-  A <strong>"Pure Change"</strong> is either a change of a primitive input value
+  A <strong>"Pure Change"</strong> is a change of a primitive input value
   <strong>(String, Boolean, Number, etc.)</strong>
+</p>
+
+<p>
+  A <strong>"Impure Change"</strong> are pipes that get executed when Angular
+  detects a pure change on the input value
 </p>
 
 <p>
   Go to Custom Pipes page to see example here:
   <a routerLink="/custom-pipes">Custom Pipes</a>
 </p>
+
+<p>
+  Also, the example of the pipe being used can be found in the percentage pipe.
+  Look for it in the following directory:
+  <br />
+  <strong>/CustomPipes/percentage-pipe.ts</strong>
+</p>
+
+<p><strong>It should look like this:</strong></p>
+import &#123; Pipe, PipeTransform &#124; from '&#38;angular/core';<br />
+
+&#64;Pipe&#40;&#123;<br />
+name: 'percentage', <br />
+&#124;&#41;<br />
+export class PercentagePipe implements PipeTransform &#123;<br />
+transform&#40;value: any&#41; &#123;<br />
+return value * 100;<br />
+&#125;<br />
+&#125;
