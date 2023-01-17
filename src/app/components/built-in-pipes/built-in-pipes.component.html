@@ -1,0 +1,29 @@
+<p><strong>Built-In-Pipes</strong></p>
+
+<h2>Users</h2>
+
+<div class="container col-lg-6">
+  <table id="user">
+    <tr>
+      <th>Name</th>
+      <th>Job</th>
+      <th>Percentage</th>
+      <th>Age</th>
+      <th>DOB</th>
+      <th>Gender</th>
+    </tr>
+    <tr *ngFor="let user of usersToo">
+      <td>{{ user.name }}</td>
+      <td>{{ user.job | uppercase }}</td>
+      <td>
+        {{ user.percentage / 100 | percent }}
+      </td>
+      <td>
+        {{ user.age }}
+        <!--This will be a PURE CHANGE. It's data type is a number-->
+      </td>
+      <td>{{ user.dob | date : "fullDate" }}</td>
+      <td>{{ user.gender | lowercase }}</td>
+    </tr>
+  </table>
+</div>

@@ -18,6 +18,10 @@
       <span style="color: red; font-style: italic; font-weight: bold"
         >Example of using async | with a promise</span
       >
+
+      <br />
+
+      >
       <h3>Total Students: {{ totalStudents | async }}</h3>
     </div>
     <table id="student">
@@ -39,8 +43,8 @@
           {{ std.marks }}
           <!--This will be a PURE CHANGE. It's data type is a number-->
         </td>
-        <td>{{ std.DOB | date : "fullDate" | uppercase }}</td>
-        <td>{{ std.gender | lowercase }}</td>
+        <td>{{ std.DOB | date : "fullDate" | lowercase }}</td>
+        <td>{{ std.gender | uppercase }}</td>
       </tr>
     </table>
     <br /><br />
