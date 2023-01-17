@@ -1,0 +1,127 @@
+<p><strong>Template-Driven Forms</strong></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Template-Driven Forms</h4>
+      <ol>
+        <li>Simple Basic Form</li>
+        <li>Easy to start with</li>
+        <li>Based on Template (HTML)</li>
+      </ol>
+    </div>
+
+    <div class="col-lg-6">
+      <h4>Reacvtive Forms</h4>
+      <ol>
+        <li>Complex form with more control</li>
+        <li>Structure of form is defined in TypeScript class</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h4>Template-Driven Form with Validation</h4>
+
+  <!--START FORM HERE-->
+  <div class="form">
+    <h2 id="registration">Registration Form</h2>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <label for="fname">First Name</label>
+      <input
+        type="text"
+        id="fname"
+        placeholder="Your name.."
+        name="firstname"
+        [(ngModel)]="firstName"
+        required
+        #fName="ngModel"
+      />
+      <div>
+        <small *ngIf="fName.invalid && fName.touched"
+          >First name is a required field</small
+        >
+        <span *ngIf="firstName">You entered: {{ firstName }}</span>
+      </div>
+
+      <label for="lname">Last Name</label>
+      <input
+        type="text"
+        id="lname"
+        placeholder="Your last name.."
+        name="lastname"
+        [(ngModel)]="lastName"
+        required
+        #lName="ngModel"
+      />
+      <div>
+        <small *ngIf="lName.invalid && lName.touched"
+          >Last name is a required field</small
+        >
+        <span *ngIf="lastName">You entered: {{ lastName }}</span>
+      </div>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your last email.."
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+      />
+      <div>
+        <small *ngIf="email.invalid && email.touched">Invalid Email</small>
+      </div>
+
+      <label for="country">Country</label>
+      <select id="country" name="country" [ngModel]="defaultCountry">
+        <option value="southAfrica">South Africa</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="india">India</option>
+        <option value="uk">UK</option>
+      </select>
+
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" value="male" name="gender" ngModel />
+      <label for="male">Male</label>
+      <input type="radio" id="female" value="female" name="gender" ngModel />
+      <label for="female">Female</label>
+      <input type="radio" id="other" value="other" name="gender" ngModel />
+      <label for="other">Other</label>
+      <br /><br />
+
+      <label>Hobbies <i>(Optional)</i></label>
+      <div class="form-inline">
+        <label
+          ><input type="checkbox" value="sports" name="hobbies" ngModel />
+          Sports</label
+        >
+        <label
+          ><input type="checkbox" value="movies" name="hobbies" ngModel />
+          Movies</label
+        >
+        <label
+          ><input type="checkbox" value="music" name="hobbies" ngModel />
+          Music</label
+        >
+      </div>
+
+      <input type="submit" value="Submit" id="btn" [disabled]="myForm.valid" />
+    </form>
+  </div>
+
+  <div class="form-data">
+    <h3>Form Data</h3>
+    <p>First Name: <b></b></p>
+    <p>Last Name: <b></b></p>
+    <p>Email: <b></b></p>
+    <p>Country: <b></b></p>
+    <p>Gender: <b></b></p>
+  </div>
+</div>
