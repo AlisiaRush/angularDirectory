@@ -51,6 +51,8 @@ import { PercentagePipe } from './CustomPipes/percentage.pipe';
 import { FilterPipe } from './CustomPipes/filter.pipe';
 import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
+import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
+import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
     AboutComponent,
     AllUsersComponent,
     AddUserComponent,
+    BuiltInPipesComponent,
     ChildComponentComponent,
     ComponentAComponent,
     ComponentBComponent,
@@ -66,6 +69,7 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
     CourseComponent,
     CourseDetailsComponent,
     CustomPipesComponent,
+    DataFilteringComponent,
     DataServiceComponent,
     DependencyInjectionComponent,
     HomeComponent,
@@ -83,7 +87,7 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
     OperatorsComponent,
     PageNotFoundComponent,
     ParentComponentComponent,
-    PercentagePipe,
+    PurePipeComponent,
     Renderer2Component,
     RenderHighlightDirective,
     RoutingComponent,
@@ -91,12 +95,13 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
     ServiceComponentBComponent,
     ServicesComponent,
     SearchComponent,
+    TemplateDrivenFormsComponent,
     TermsComponent,
     UserDetailComponent,
     UnsubscribeComponent,
+    // PIPES
     FilterPipe,
-    PurePipeComponent,
-    DataFilteringComponent,
+    PercentagePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 

@@ -29,12 +29,15 @@ import { CourseResolveService } from './Services/course-resolve.service';
 import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
 import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
+import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
+import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 
 const routes: Routes = [
   // Main Pages
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
+  { path: 'built-in-pipes', component: BuiltInPipesComponent },
   { path: 'componentInteraction', component: ComponentInteractionComponent },
   {
     path: 'contact',
@@ -72,6 +75,7 @@ const routes: Routes = [
   { path: 'renderer2', component: Renderer2Component },
   { path: 'routing', component: RoutingComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'template-driven-forms', component: TemplateDrivenFormsComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'unsubscribe', component: UnsubscribeComponent },
 

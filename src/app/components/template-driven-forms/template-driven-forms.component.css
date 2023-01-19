@@ -3,6 +3,10 @@
     padding:20px 15px;
 }
 
+.forms-container h4{
+  font-size:20px;
+}
+
 input[type=text],[type=email], select {
     width: 100%;
     padding: 12px 20px;
@@ -12,7 +16,6 @@ input[type=text],[type=email], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-
   input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -32,7 +35,6 @@ input[type=text],[type=email], select {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    width: 600px;
     margin: 30px auto;
   }
 
@@ -42,3 +44,5 @@ input[type=text],[type=email], select {
   small{
     color: red;
   }
+
+

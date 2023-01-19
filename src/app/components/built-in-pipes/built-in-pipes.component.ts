@@ -12,8 +12,13 @@ export class BuiltInPipesComponent implements OnInit {
   // Public Variable
 
   public usersToo: any;
+  public showCode: boolean = true;
 
   ngOnInit() {
     this.usersToo = this.userService.usersToo;
+  }
+
+  public getCode() {
+    this.showCode = true;
   }
 }

@@ -9,6 +9,18 @@ export class CoursesService {
   public courses = [
     {
       id: 1,
+      title: 'Built-In-Pipes',
+      description: 'See how Angular uses built-in-pipes to transform data.',
+      link: '/built-in-pipes',
+      name: 'Built-In-Pipes',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '27 hours',
+      type: 'Premium',
+      price: '$130.00',
+    },
+    {
+      id: 2,
       title: 'Component Interaction with Services',
       description: 'Sharing services between two or more components',
       link: '/componentInteraction',
@@ -20,7 +32,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Custom Pipes',
       description: 'Learn how to create your own custom pipes.',
       link: '/custom-pipes',
@@ -32,7 +44,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Data Services',
       description:
         'An instance of a class that you can make available to any part of your application using dependency injection system',
@@ -45,9 +57,10 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Data Filtering',
-      description: 'Filtering and Sorting Data without using Pipes',
+      description:
+        'Filtering and Sorting Data without using Pipes. See how to use ASYNC PIPE!',
       link: '/data-filtering',
       name: 'Data Sharing',
       image: '../../../../assets/images/courses/angularPlaceholder.jpg',
@@ -57,7 +70,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 4,
+      id: 6,
       title: 'Data Sharing',
       description:
         'Used to share data between components. You can use Parent to Child, Child to Parent or use Subject and Service.',
@@ -70,7 +83,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 5,
+      id: 7,
       title: 'Dependency Injection',
       description:
         'Allows components, decorators, classes, pipes, and injectables to configure the dependencies they need.',
@@ -83,7 +96,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 6,
+      id: 8,
       title: '@HostListener',
       description:
         ' Listens to the DOM event on the host element and it reacts to that event by executing an event handler method.',
@@ -96,7 +109,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 7,
+      id: 9,
       title: '@HostBinding',
       description:
         ' Binds the host element property to a variable in the directive orcomponent.',
@@ -109,7 +122,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 8,
+      id: 10,
       title: 'NgClass',
       description:
         'Used to style HTML elements based on a className and condition',
@@ -122,7 +135,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 9,
+      id: 11,
       title: 'NgIf',
       description:
         'Used to add or remove HTML Elements based on a given condition',
@@ -135,7 +148,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 10,
+      id: 12,
       title: 'NgStyle',
       description:
         'Used to change the look & behavior of HTML Elements based on a condition',
@@ -148,7 +161,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 11,
+      id: 13,
       title: 'Observables',
       description:
         'Preform asynchronous operations and handle asynchronous data',
@@ -161,7 +174,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 12,
+      id: 14,
       title: 'Operators',
       description:
         'Operators are used to manipulate the observable data stream.',
@@ -174,7 +187,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 13,
+      id: 15,
       title: 'Pure Pipes/ Impure Pipes',
       description: 'Learn how to use Pure Pipes in Angular.',
       link: '/pure-pipes',
@@ -186,7 +199,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 14,
+      id: 16,
       title: 'Renderer2',
       description:
         'Used to manipulate DOM Elements without using native element.',
@@ -199,7 +212,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 15,
+      id: 17,
       title: 'Routing',
       description:
         'Routing from one part of the app to another from one view to another view.',
@@ -212,7 +225,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 16,
+      id: 18,
       title: 'Services',
       description:
         'Services are re-usable TypeScript Classes that can be used in multiple components across your Angular Application.',
@@ -225,7 +238,19 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 17,
+      id: 19,
+      title: 'Template-Driven Forms',
+      description: 'Create a Template-Driven Form.',
+      link: '/template-driven-forms',
+      name: 'Template-Driven Forms',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '10 hours',
+      type: 'Premium',
+      price: '$80.00',
+    },
+    {
+      id: 20,
       title: 'Unsubscribe to Observable',
       description: 'Stops data from emitting.',
       link: '/unsubscribe',

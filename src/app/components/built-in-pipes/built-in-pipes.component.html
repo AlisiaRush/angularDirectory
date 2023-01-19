@@ -26,4 +26,11 @@
       <td>{{ user.gender | lowercase }}</td>
     </tr>
   </table>
+  <br />
+  <br />
+  <button class="getCode()">Show Code</button>
+
+  <div *ngIf="showCode" class="container">
+    <p>Code here...</p>
+  </div>
 </div>
