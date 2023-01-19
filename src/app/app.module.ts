@@ -53,6 +53,7 @@ import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
+import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { TemplateDrivenFormsComponent } from './components/template-driven-forms
     // PIPES
     FilterPipe,
     PercentagePipe,
+    SetValuePatchValueComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 

@@ -31,6 +31,7 @@ import { PurePipeComponent } from './components/pure-pipe/pure-pipe.component';
 import { DataFilteringComponent } from './components/data-filtering/data-filtering.component';
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
+import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
 
 const routes: Routes = [
   // Main Pages
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'pure-pipes', component: PurePipeComponent },
   { path: 'renderer2', component: Renderer2Component },
   { path: 'routing', component: RoutingComponent },
+  { path: 'setValuePatchValue', component: SetValuePatchValueComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'template-driven-forms', component: TemplateDrivenFormsComponent },
   { path: 'terms', component: TermsComponent },

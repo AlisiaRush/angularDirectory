@@ -226,6 +226,18 @@ export class CoursesService {
     },
     {
       id: 18,
+      title: 'SetValue/PatchValue',
+      description: 'Learn how to use SetValue & PatchValue.',
+      link: '/setValuePatchValue',
+      name: 'SetValue/PatchValue',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '80 hours',
+      type: 'Premium',
+      price: '$140.00',
+    },
+    {
+      id: 18,
       title: 'Services',
       description:
         'Services are re-usable TypeScript Classes that can be used in multiple components across your Angular Application.',
