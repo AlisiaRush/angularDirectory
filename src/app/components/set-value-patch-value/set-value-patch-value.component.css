@@ -45,4 +45,19 @@ input[type=text],[type=email], select {
     color: red;
   }
 
+  .myForm.VALID{
+    border: 2px solid green;
+    box-shadow: 0 0 31px rgba(147, 209, 118, 0.7)!important;
+  }
+
+  .myForm.INVALID{
+    border: 2px solid red;
+    box-shadow: 0 0 31px rgba(241, 93, 85, 0.7)!important;
+  }
+
+  .myForm.PENDING{
+    border: 2px solid orange;
+    box-shadow: 0 0 31px rgba(249, 192, 22, 0.7)!important;
+  }
+
 
