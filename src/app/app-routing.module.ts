@@ -32,6 +32,7 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 const routes: Routes = [
   // Main Pages
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'operators', component: OperatorsComponent },
   { path: 'pure-pipes', component: PurePipeComponent },
   { path: 'renderer2', component: Renderer2Component },
+  { path: 'reactiveForms', component: ReactiveFormsComponent },
   { path: 'routing', component: RoutingComponent },
   { path: 'setValuePatchValue', component: SetValuePatchValueComponent },
   { path: 'services', component: ServicesComponent },

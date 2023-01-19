@@ -213,6 +213,18 @@ export class CoursesService {
     },
     {
       id: 17,
+      title: 'Reactive Forms',
+      description: 'Learn how to use Reactive Forms in Angular.',
+      link: '/reactiveForms',
+      name: 'Reactive Forms',
+      image: '../../../../assets/images/courses/angularPlaceholder.jpg',
+      author: 'Alisia Rush',
+      duration: '20 hours',
+      type: 'Premium',
+      price: '$120.00',
+    },
+    {
+      id: 18,
       title: 'Routing',
       description:
         'Routing from one part of the app to another from one view to another view.',
@@ -225,7 +237,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 18,
+      id: 19,
       title: 'SetValue/PatchValue',
       description: 'Learn how to use SetValue & PatchValue.',
       link: '/setValuePatchValue',
@@ -237,7 +249,7 @@ export class CoursesService {
       price: '$140.00',
     },
     {
-      id: 18,
+      id: 20,
       title: 'Services',
       description:
         'Services are re-usable TypeScript Classes that can be used in multiple components across your Angular Application.',
@@ -250,7 +262,7 @@ export class CoursesService {
       price: '$120.00',
     },
     {
-      id: 19,
+      id: 21,
       title: 'Template-Driven Forms',
       description: 'Create a Template-Driven Form.',
       link: '/template-driven-forms',
@@ -262,7 +274,7 @@ export class CoursesService {
       price: '$80.00',
     },
     {
-      id: 20,
+      id: 22,
       title: 'Unsubscribe to Observable',
       description: 'Stops data from emitting.',
       link: '/unsubscribe',

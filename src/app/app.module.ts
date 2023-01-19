@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ParentComponentComponent } from './components/DataSharing/parent-component/parent-component.component';
 import { ChildComponentComponent } from './components/DataSharing/child-component/child-component.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TermsComponent } from './components/terms/terms.component';
 import { HomeComponent } from './components/home/home.component';
 import { ComponentAComponent } from './components/DataSharing/component-a/component-a.component';
@@ -54,6 +54,7 @@ import { DataFilteringComponent } from './components/data-filtering/data-filteri
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -104,8 +105,15 @@ import { SetValuePatchValueComponent } from './components/set-value-patch-value/
     FilterPipe,
     PercentagePipe,
     SetValuePatchValueComponent,
+    ReactiveFormsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
 
   providers: [
     UserService,
