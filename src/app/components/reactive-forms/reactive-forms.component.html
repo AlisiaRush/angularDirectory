@@ -14,11 +14,30 @@
   </li>
 </ol>
 
+<p><strong>Form Arrays</strong></p>
+<p>
+  A way to manage the collection of Form Controls in Angular. The controls can
+  be a FormGroup, FormControl, or another FormArray.
+</p>
+<p><strong>We can group Form Controls in Angular forms in two ways:</strong></p>
+<ol>
+  <li>
+    <strong>Using FormGroup</strong> - Becomes a property of the FormGroup. Each
+    control is represented as a key-value- pair. It's an <strong>Object</strong>
+  </li>
+  <li>
+    <strong>Using FormArray</strong> - The controls become part of an array.
+    It's an <strong>Array</strong>
+  </li>
+</ol>
+<p>An example is found in the code below using<strong>"skills"</strong></p>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
       <div class="form">
         <h4 id="registration">Reactive Form</h4>
+
         <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
           <div formGroupName="personalDetails">
             <label for="fname">First Name</label>
@@ -112,7 +131,24 @@
             >
           </div>
           <br />
-          <input type="submit" value="Submit" id="btn" [disabled]="" />
+
+          <div formArrayName="skills">
+            <ng-container
+              *ngFor="let skill of skillsFormArray.controls; let i = index"
+            >
+              <input
+                type="text"
+                placeholder="add skill.."
+                formControlName="{{ i }}"
+              />
+            </ng-container>
+            <br />
+            <button class="btn btn-success" (click)="addSkills()">
+              + Add Skills
+            </button>
+          </div>
+
+          <input type="submit" value="Submit" id="btn" />
         </form>
       </div>
     </div>
