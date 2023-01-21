@@ -1,0 +1,133 @@
+<p><strong>HTTP Requests</strong></p>
+
+<p>
+  <strong>HTTP Requests</strong> - Makes calls to the server where the data is
+  present. We don't use credentials to connect directly to a data base in the
+  Angular App! SECURITY!!! We will use an API
+</p>
+<p>We connect and communicate with an API's</p>
+
+<p>
+  <strong>URL's</strong> - domain path such as
+  <strong>(yourdomain.com/products/id)</strong>
+</p>
+
+<p><strong>HEADERS</strong> - Metadata for the request</p>
+<p><strong>BODY</strong> - Data sent to the server.</p>
+
+<p><strong>HTTP Verbs</strong></p>
+<ol>
+  <li><strong>GET</strong> - Gets data from server</li>
+  <li><strong>POST</strong> - Posts data to server</li>
+  <li><strong>PUT</strong> - Updates data to server</li>
+  <li>
+    <strong>PATCH</strong> - A set of instructions on how to modify a resource.
+    Similar to "UPDATE". The difference is... Patches minimize your attack
+    surface and protects against attackers. Patches address specific
+    vunerabilities.
+  </li>
+  <li><strong>DELETE</strong> - Deletes data from server</li>
+</ol>
+
+<p><strong>Setting up FireBase</strong></p>
+
+<ol>
+  <li>
+    Go to Firebase website:
+    <a href="https://firebase.google.com/">https://firebase.google.com/</a>
+  </li>
+  <li>Click on "Get Started"</li>
+  <li>Create a Project and provide a name</li>
+  <li>Accept and continue</li>
+  <li>Create Project</li>
+  <li>Click on Continue</li>
+  <li>Select Build option in left panel</li>
+  <li>Create a database > Create realtime database</li>
+  <li>Select Location and click on Next</li>
+  <li>Select start in test mode. Authentication will be added later.</li>
+  <li>You should see an endpoint in the realtime database</li>
+</ol>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Sending a POST</h4>
+      <div class="form-area">
+        <h3>Create Product</h3>
+        <form
+          #productsForm="ngForm"
+          (ngSubmit)="onProductCreate(productsForm.value)"
+        >
+          <label>Product Name</label>
+          <input type="text" name="pName" ngModel />
+
+          <label>Product Description</label>
+          <input type="text" name="desc" ngModel />
+
+          <label>Product Price</label>
+          <input type="text" name="price" ngModel />
+
+          <input
+            type="submit"
+            value="{{ 'editMode' ? 'Update Product' : 'Add Product' }}"
+          />
+          &nbsp;
+        </form>
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="product-display-area">
+        <h4>All Products</h4>
+        <table id="products">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+          <tr *ngIf="allProducts.length < 1 && !isFetching">
+            <td colspan="5">No Products Available</td>
+          </tr>
+
+          <tr *ngIf="isFetching">
+            <td colspan="5">Loading...</td>
+          </tr>
+
+          <tr *ngFor="let product of allProducts; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.pName }}</td>
+            <td>{{ product.desc }}</td>
+            <td>${{ product.price }}</td>
+            <td>
+              <button
+                (click)="onDeleteProduct(product.id)"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </td>
+            <td>
+              <button (click)="editProduct(product.id)" class="btn btn-success">
+                Edit
+              </button>
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <div class="mt-3">
+          <button class="btn btn-info" (click)="onProductsFetch()">
+            Fetch Product
+          </button>
+          &nbsp;
+          <button (click)="onDeleteAllProduct()" class="btn btn-secondary">
+            Delete All
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
