@@ -33,6 +33,8 @@ import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipe
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { CustomValidationComponent } from './components/custom-validation/custom-validation.component';
+import { HttpRequestsComponent } from './components/http-requests/http-requests.component';
 
 const routes: Routes = [
   // Main Pages
@@ -60,6 +62,7 @@ const routes: Routes = [
     ],
   },
   { path: 'custom-pipes', component: CustomPipesComponent },
+  { path: 'custom-validation', component: CustomValidationComponent },
   { path: 'data-sharing', component: ParentComponentComponent },
   { path: 'data-filtering', component: DataFilteringComponent },
   { path: 'dataServices', component: DataServiceComponent },
@@ -67,6 +70,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hostBinding', component: HostBindingComponent },
   { path: 'hostListener', component: HostListenerComponent },
+  { path: 'http-requests', component: HttpRequestsComponent },
   { path: 'ngClass', component: NgClassComponent },
   { path: 'ngFor', component: NgForComponent },
   { path: 'ngIf', component: NgIfComponent },

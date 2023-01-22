@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { Product } from 'src/app/Models/products';
 import { ProductService } from 'src/app/Services/product.service';
 
@@ -15,6 +16,9 @@ export class HttpRequestsComponent implements OnInit {
   public isFetching: boolean = false;
   public editMode: boolean = false;
   public currentProductId!: string;
+  public errorMsg: any = null;
+  public errorSub!: Subscription;
+
   @ViewChild('productsForm') form!: NgForm;
 
   // Public Methods
@@ -32,10 +36,15 @@ export class HttpRequestsComponent implements OnInit {
 
   private fetchProducts() {
     this.isFetching = true;
-    this.productService.fetchProduct().subscribe((products) => {
-      this.allProducts = products;
-      this.isFetching = false;
-    });
+    this.productService.fetchProduct().subscribe(
+      (products) => {
+        this.allProducts = products;
+        this.isFetching = false;
+      },
+      (err) => {
+        this.errorMsg = err.message;
+      }
+    );
   }
 
   public onDeleteProduct(id: any) {
@@ -49,13 +58,18 @@ export class HttpRequestsComponent implements OnInit {
 
   ngOnInit() {
     this.fetchProducts();
+    this.productService.error.subscribe((message) => {
+      this.errorMsg = message;
+    });
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
   }
 
   public onProductsFetch() {
     this.fetchProducts();
   }
-
-  public addProduct() {}
 
   public editProduct(id: any) {
     // get the product based on id

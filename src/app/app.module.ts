@@ -55,6 +55,9 @@ import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipe
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { SetValuePatchValueComponent } from './components/set-value-patch-value/set-value-patch-value.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { CustomValidationComponent } from './components/custom-validation/custom-validation.component';
+import { HttpRequestsComponent } from './components/http-requests/http-requests.component';
+import { CourseFeaturedComponent } from './components/Courses/course-featured/course-featured.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +109,9 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     PercentagePipe,
     SetValuePatchValueComponent,
     ReactiveFormsComponent,
+    CustomValidationComponent,
+    HttpRequestsComponent,
+    CourseFeaturedComponent,
   ],
   imports: [
     BrowserModule,
